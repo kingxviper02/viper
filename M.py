@@ -5,7 +5,7 @@ import datetime
 import os
 
 # insert your Telegram bot token here
-bot = telebot.TeleBot('7109032816:AAGZWoie2tiWtxlleebKqfdK7yGHve4uW_s')
+bot = telebot.TeleBot('7477846047:AAFu6FUW1bZYmxcR0H11ROnD1dx3i68EMnM')
 
 # Admin user IDs
 admin_id = ["6824982812"]
@@ -219,13 +219,13 @@ def handle_bgmi(message):
             target = command[1]
             port = int(command[2])  # Convert time to integer
             time = int(command[3])  # Convert port to integer
-            if time > 241:
+            if time > 301:
                 response = "Error: Time interval must be less than 240."
             else:
                 record_command_logs(user_id, 'bgmi', target, port, time)
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
-                full_command = f"python bgmi.py {target} {port} {time}"
+                full_command = f"python bgmi.py {target} {port} {time} king10year"
                 subprocess.run(full_command, shell=True)
                 response = f"BGMI Attack Finished. Target: {target} Port: {port} Port: {time}"
         else:
